@@ -1,4 +1,4 @@
-import { MapPin, Briefcase, Award, TrendingUp } from "lucide-react";
+import { MapPin, Briefcase, Award, TrendingUp, CheckCircle2 } from "lucide-react";
 import { Button } from "./ui/button";
 
 interface ProfileData {
@@ -23,12 +23,18 @@ const ProfileCard = ({ data, onReset }: ProfileCardProps) => {
 
   return (
     <div className="w-full max-w-3xl mx-auto animate-fade-in">
-      <div className="profile-card">
+      <div className="profile-card relative overflow-hidden">
+        {/* Decorative gradient overlay */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-3xl -z-10" />
+        
         {/* Header Section */}
         <div className="flex flex-col md:flex-row gap-6 mb-6">
-          <div className="flex-shrink-0">
-            <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-4xl font-bold text-white shadow-lg">
+          <div className="flex-shrink-0 relative group">
+            <div className="h-24 w-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-4xl font-bold text-white shadow-lg ring-4 ring-primary/10 group-hover:ring-primary/30 transition-all">
               {data.name.charAt(0)}
+            </div>
+            <div className="absolute -bottom-1 -right-1 h-7 w-7 bg-green-500 rounded-full border-4 border-card flex items-center justify-center">
+              <CheckCircle2 className="h-4 w-4 text-white" />
             </div>
           </div>
           <div className="flex-1">

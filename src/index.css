@@ -93,14 +93,24 @@ All colors MUST be HSL.
 
 @layer components {
   .skill-badge {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 transition-all duration-200 hover:bg-primary/20;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20 transition-all duration-200 hover:bg-primary/20 hover:scale-105 hover:shadow-md;
   }
 
   .profile-card {
-    @apply bg-card rounded-2xl shadow-lg p-6 border border-border backdrop-blur-sm;
+    @apply bg-card rounded-2xl shadow-lg p-6 border border-border backdrop-blur-sm hover:shadow-xl transition-shadow duration-300;
   }
 
   .gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .hero-background {
+    background: 
+      radial-gradient(circle at 20% 50%, hsl(201 96% 32% / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(201 90% 50% / 0.15) 0%, transparent 50%);
+  }
+
+  .stat-card {
+    @apply p-6 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
   }
 }
